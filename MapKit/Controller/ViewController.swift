@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var latitudLongitudPanel : LatitudLongitudePanelUIView?
+    var AddressPanel : UIAddressPanel?
     
 
     override func viewDidLoad() {
@@ -20,10 +21,16 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let rect = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.width, height: 180)
-        latitudLongitudPanel = LatitudLongitudePanelUIView(frame: rect )
+        let rect1 = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.width, height: 180)
+        latitudLongitudPanel = LatitudLongitudePanelUIView(frame: rect1 )
+        
+        let rect2 = CGRect(x: 0, y: latitudLongitudPanel!.bottom + 20, width: view.width, height: 180)
+        AddressPanel = UIAddressPanel(frame: rect2)
+        
+        
         
         view.addSubview(latitudLongitudPanel!)
+        view.addSubview(AddressPanel!)
         
     }
     

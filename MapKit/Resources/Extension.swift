@@ -35,7 +35,11 @@ extension UIView {
         return frame.size.width/12
     }
     
-    public func grid(gridNumber : CGFloat) -> CGFloat{
-        return (frame.size.width/12)*gridNumber
+    public func col(gridColumn : CGFloat) -> CGFloat{
+        return (frame.size.width/12)*gridColumn
+    }
+    
+    public func row(gridRow : CGFloat) -> CGFloat{
+        return (frame.size.height/12)*gridRow
     }
 }
